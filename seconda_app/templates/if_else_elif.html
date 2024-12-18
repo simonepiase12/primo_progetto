@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Esercizi if else</title>
-</head>
-<body>
+{% extends "base.html"%}
+
+{%block title%} {{block.super}} | if else if {% endblock title%}
+
+{%block content%}
+<h1>if else if</h1>
+<p>
     <b>var1 = {{ var1 }}</b> <br/>
 <b>var2 = {{ var2 }}</b> <br/>
 <b>var3 = {{ var3 }}</b> <br/>
@@ -49,5 +49,5 @@
 {% else %}
     <p>i>var1 è uguale a var2 </i></p>
 {% endif %}
-</body>
-</html>
+</p>
+{%endblock content%}

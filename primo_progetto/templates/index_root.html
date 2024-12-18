@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Index root</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>    
-        <a href=" {% url 'prima_app:index'%}">Pannello admin</a>
+{% extends "base.html"%}
 
-    </body>
-</html>
+{%block title%} {{block.super}} | index root {% endblock title%}
+
+{%block content%}
+<h1>index root</h1>  
+<p>
+        <a href=" {% url 'prima_app:index'%}">Pannello admin</a>
+    </p> 
+
+    {%endblock cpntent%}
