@@ -7,7 +7,7 @@ class Giornalista (models.Model):
     nome = models.CharField(max_length=20) 
     cognome = models.CharField(max_length=20)
     nascita = models.DateField(blank=True,default=datetime.now())
-    def _str__(self):
+    def __str__(self):
         return self.nome + " " + self.cognome
     
     class Meta:
@@ -22,7 +22,7 @@ class Articolo (models.Model):
     data = models.DateField(auto_now=True, blank=True)
     visualizzazioni = models.IntegerField(default=0,blank=True)
     
-    def _str__(self):
+    def __str__(self):
         return self.titolo
     
     class Meta:
