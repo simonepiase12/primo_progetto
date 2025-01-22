@@ -18,4 +18,11 @@ def articoloDetailView(request,pk):
     articolo = get_object_or_404(Articolo,pk=pk)
     context = {"articolo":articolo}
     return render(request,"articolo_detail.html",context)
+
+def listaArticoli(request, pk):
+    articoli = Articolo.objects.filter(giornalista_id=pk)
+    context={
+        'articoli':articoli,
+    }
+    return render(request,'lista_articoli.html',context)
     
