@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} 
+lista  
+{% endblock title %}
+
+{% block content %}
+
+<h1>Benvenuto nel sistema di gestione dei Corsi di Formazione</h1>
+{% for articolo in articoli %}
+        <p><strong>Titolo: </strong>{{ corso.titolo }}</p> 
+        <p><strong>DEscrizione: </strong>{{ corso.descrizione }}</p> 
+        <p><strong>Inizio: </strong>{{ corso.data_inizio }}</p>
+        <p><strong>Fine: </strong>{{ corso.data_inizio }}</p>
+        <p><strong>Posti disponibili: </strong>{{ corso.posti_disponibili }}</p>
+
+        <hr>    
+    {% endfor %}
+{% endblock content %}

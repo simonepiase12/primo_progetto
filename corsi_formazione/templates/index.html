@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} 
+index  
+{% endblock title %}
+
+{% block content %}
+
+<h1>Benvenuto nel sistema di gestione dei Corsi di Formazione</h1>
+<ul>
+  <li><a href="{% url 'corsi:lista' %}">Lista dei Corsi</a></li>
+
+</ul>
+{% endblock content %}

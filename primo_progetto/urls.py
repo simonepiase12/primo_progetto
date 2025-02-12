@@ -19,7 +19,8 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("prima_app.urls",namespace="prima_app")),
-    path('',include("seconda_app.urls",namespace="seconda_app")),
-    path('',include("news.urls",namespace="news")),
+    path('prima',include("prima_app.urls",namespace="prima_app")),
+    path('seconda',include("seconda_app.urls",namespace="seconda_app")),
+    path('news',include("news.urls",namespace="news")),
+    path('corsi',include("corsi_formazione.urls",namespace="corsi_formazione")),
 ]
