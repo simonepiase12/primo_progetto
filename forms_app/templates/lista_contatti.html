@@ -1,0 +1,26 @@
+{% block content %}
+<table class="table table-responsive">
+<tr>
+{% if request.user.is_authenticated %}
+<td>Cancella</td>
+<td>Modifica</td>
+{% endif %}
+<td>Nome</td>
+<td>Cognome</td>
+<td>Email</td>
+<td>Contenuto</td>
+</tr>
+{% for c in contatti %}
+<tr>
+{% if request.user.is_authenticated %}
+<td><a href="{%url 'forms_app:elimina_contatto' c.pk %}" ><i class="fas fa-eraser"></i></a> </td>
+<td><a href="{%url 'forms_app:modifica_contatto' c.pk %}" ><i class="far fa-edit"></i></a> </td>
+{% endif %}
+<td>{{c.nome}}</td>
+<td>{{c.cognome}}</td>
+<td>{{c.email}}</td>
+<td>{{c.contenuto}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

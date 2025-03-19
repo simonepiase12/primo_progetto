@@ -19,10 +19,11 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('prima',include("prima_app.urls",namespace="prima_app")),
-    path('seconda',include("seconda_app.urls",namespace="seconda_app")),
-    path('news',include("news.urls",namespace="news")),
-    path('corsi',include("corsi_formazione.urls",namespace="corsi_formazione")),
+    path('prima/',include("prima_app.urls",namespace="prima_app")),
+    path('seconda/',include("seconda_app.urls",namespace="seconda_app")),
+    path('news/',include("news.urls",namespace="news")),
+    path('corsi/',include("corsi_formazione.urls",namespace="corsi_formazione")),
+    path('forms_app/',include("forms_app.urls",namespace="contatti")),
 ]
 
 
