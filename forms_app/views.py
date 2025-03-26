@@ -56,10 +56,10 @@ def modifica_contatto(request, pk):
         form = FormContatto(request.POST, instance=contatto) #ora passo oltre al contatto prelevato dal db anche i dati modificati
         if form.is_valid():
             form.save()
-            return redirect('forms_app:lista-contatti') # url che reindirizza alla pagina lista_contatti.html
+            return redirect('forms_app:lista') # url che reindirizza alla pagina lista_contatti.html
 
     context={'form': form, 'contatto': contatto}
-    return render(request, 'modifica contatto.html', context)
+    return render(request, 'modifica_contatto.html', context)
 
 
     
@@ -69,6 +69,6 @@ def elimina_contatto(request, pk):
     contatto = get_object_or_404(Contatto, id=pk)
     if request.method == "POST": # vuol dire che l'utente ha inviato il form che conferma l'eliminazione
         contatto.delete() #elimina il contatto dal database
-        return redirect('forms_app:lista-contatti')
+        return redirect('forms_app:lista')
     context= {'contatto': contatto}
     return render(request,'elimina_contatto.html',context)
